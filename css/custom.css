@@ -1,0 +1,23 @@
+body{
+    padding-top: 65px;
+}
+
+img{
+    height:140px;
+    width:140px;
+}
+
+.cabeceraProducto{
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 2px solid #ddd;
+    text-align: center;
+}
+
+.imagenFix{
+    min-height: 200px;
+}
+
+.espaciador{
+    min-height: 10px;
+}
+

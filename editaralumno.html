@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <script src="js/editaralumno.js"></script>
+    <script type="text/javascript" src="js/validaciones.js"></script>
+
+    <title>Editar datos Alumnos</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" title="Inicio">Inicio</a></li>
+                <li class="active"><a href="indexe.html" title="">Visualizar</a></li>
+            </ul>
+        </div>
+    </nav>
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" title="Inicio">Inicio</a></li>
+                <li><a href="indexe.html" title="">Visualizar</a></li>
+                <li class="active"><a href="busqueda.html" title="">Buscar</a></li>
+            </ul>
+        </div>
+    </nav>
+       
+<div class="container-fluid">
+          <form id="formularioAlta" class="ui form" name="f1">
+             <div class="field">
+             <br>
+             <br>
+             <br>
+             <br>
+               <label>Nombre (s)</label>
+                  <div class="three fields">
+                      <div class="field">
+                        <input type="text" id="nombre" name="shipping[first-name]" placeholder="First Name">
+                      </div>
+                      
+                      <div class="field">
+                        <input type="text" id="ape1" name="shipping[last-name]" placeholder="First Last Name">
+                      </div>
+
+                      <div class="field">
+                        <input type="text" id="ape2" name="shipping[last-name]" placeholder="Second Last Name">
+                      </div>
+
+                  </div>
+
+                <label>Edad</label>
+                  <div class="fields">
+                      <div class="twelve wide field">
+                          <input type="number" id="edad" name="four wide field" required placeholder="Ingrese su edad">
+                      </div>
+
+
+                      <label>Fecha de Nacimiento</label>
+                      <div class="four wide field">
+                            <input type="date" id="date" name="shipping[address-2]" >
+                      </div>
+                </div>
+
+
+              <label>Escuela de Procedencia</label>
+              <div class="field">
+                    <div class="field">   
+                      <input type="text" class="form-control" id="proc" required placeholder="Ingrese tu escuela de procedencia">
+                    </div>
+              </div>
+
+           <div class="form-group">
+              <label for="sistema" >Tipo de Sistema</label><br/> 
+            
+            <div class="ui slider checkbox">
+              <input type="radio" name="sistema" value="Escolarizado" id="Escolarizado" >
+              <label for="Escolarizado">Escolarizado</label>
+            </div>
+
+            <div class="ui slider checkbox">
+              <input type="radio" name="sistema" value="No Escolarizado" id="Noescolarizado" >
+              <label for="Noescolarizado">No Escolarizado</label> 
+            </div>
+          </div>
+
+
+            <div class="form-group">
+              <label for="turno" >Turno Escolar</label><br/>
+                    <div class="ui slider checkbox">  
+                         <input type="radio" name="turno" value="Vespertino" id="Vespertino" >
+                         <label for="Vespertino">Vespertino</label>
+                    </div>
+
+                    <div class="ui slider checkbox">
+                         <input type="radio" name="turno" value="Matutino" id="Matutino" >
+                         <label for="Matutino">Matutino</label> 
+                    </div>
+
+                    <div class="ui slider checkbox">
+                         <input type="radio" name="turno" value="Nocturno" id="Nocturno" >
+                         <label for="Nocturno">Nocturno</label> 
+                    </div>
+           </div>
+
+
+               <div class="fields">
+                      <div class="ten wide field">
+                          <label for="telcasa">Ingrese el telefono de casa:</label> 
+                          <input type="number" id="telcasa" max="10" min="10"  class="form-control" placeholder="*Tel&eacute;fono Casa" >
+                      </div>
+
+                      <div class="ten wide field">
+                          <label for="telcel">Ingrese el telefono celular</label> 
+                          <input type="number"  id="telcel" class="form-control" maxl="7" min="7" placeholder="*Tel&eacute;fono celular">
+                      </div>
+
+                      <div class="ten wide field">
+                          <label for="email">Ingresa tu Email</label>
+                          <input type="email" name="email" id="email" class="form-control" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required placeholder="examples@examples.com">
+                      </div>
+              </div>    
+
+
+              <label>Oferta educativa</label>
+              <div class="fields">
+        
+                              <select name="conti" id="oferta" onChange="ponPaises(this.form)">
+                                <option selected>Selcciona...</option>
+                                <option>Jardin de Niños</option>
+                                <option>Primaria</option>
+                                <option>Secundaria</option>
+                                <option>Bachillerato</option>
+                                <option>Licenciatura</option>
+                              </select>
+
+                              <select name="pais" id="plantel" onChange="ponProvincias(this.form)">
+                              </select>
+                                
+                              <select name="provincia" id="carrera" onChange="ponProvincias(this.form)">
+                                  <option></option>
+                              </select>
+               </div>
+
+            <button type="button" class="btn btn-primary" id="botonActualizar">Actualizar Alumno</button>
+        </form>
+    </div>
+</body>
+</html>

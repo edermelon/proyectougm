@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/busqueda.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.1/vue.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+    <title>Anadir Alumno</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" title="Inicio">Inicio</a></li>
+                <li><a href="administracion.html" title="">Administracion</a></li>
+                <li><a href="nuevoalumno.html" title="">Añadir Alumno</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<br>
+<br>
+<br>
+<span class="h1"><center>Busqueda</center></span>
+<br>
+<div class="alert alert-info alert-dismissable container text-center">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Nota: La búsqueda de usuarios debe realizar respetando mayúsculas y minúsculas</div>
+ <div class="container-fluid">
+        <br>
+            <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" class="form-control" id="nombre" placeholder="Introduzca el nombre">
+                <button type="button" class="btn btn-success" id="btnNombre">Nombre</button>
+            </div>
+
+               <div class="form-group">
+                <label for="ape1">Apellido Paterno: </label>
+                <input type="text" class="form-control" id="ape1" placeholder="Introduzca el apellido paterno del alumno">
+                <button type="button" class="btn btn-success" id="btnApe1">Apellido Paterno</button>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Apellido Materno: </label>
+                <input type="text" class="form-control" id="ape2" placeholder="Introduzca la Edad del alumno">
+                <button type="button" class="btn btn-success" id="btnApe2">Apellido Materno</button>
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad: </label>
+                <input type="num" class="form-control" id="edad" placeholder="Introduzca la Edad del alumno">
+                <button type="button" class="btn btn-success" id="btnEdad">Edad</button>
+            </div>
+             <div class="form-group">
+                <label for="edad">Escuela de procedencia: </label>
+                <input type="text" class="form-control" id="proc" placeholder="Escuela de procedencia">
+                <button type="button" class="btn btn-success" id="btnProc">Procedencia</button>
+            </div>
+              <div class="form-group">
+                <label for="edad">Sistema educativo: </label>
+                <input type="txt" class="form-control" id="sistema" placeholder="Sistema educativo">
+                <button type="button" class="btn btn-success" id="btnSist">Sistema</button>
+            </div>
+            <div class="form-group">
+                <label for="edad">Turno escolar: </label>
+                <input type="txt" class="form-control" id="turno" placeholder="Turno escolar">
+                <button type="button" class="btn btn-success" id="btnTurno">Turno</button>
+            </div>
+             <div class="form-group">
+                   <label for="date">Fecha de Nacimiento: </label>
+                      <div class="four wide field">
+                            <input type="date" id="date" name="shipping[address-2]" >
+                            <button type="button" class="btn btn-success" id="btnFecha">Fecha de nacimiento</button>
+                      </div>
+                      
+
+                      <br>
+                      <br>
+
+                     <div class="form-group">
+                          <label for="telcasa">Ingrese el telefono de casa:</label> 
+                          <input type="number" id="telcasa"  max="10" class="form-control" placeholder="*Tel&eacute;fono Casa" >
+                          <button type="button" class="btn btn-success" id="btnTelCasa">Telefono de casa</button>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="telcel">Ingrese el telefono celular</label> 
+                          <input type="number"  id="telcel" class="form-control"  placeholder="*Tel&eacute;fono celular">
+                          <button type="button" class="btn btn-success" id="btnCelular">Telefono celular</button>
+                      </div>
+
+                     <div class="form-group">
+                          <label for="email">Ingresa tu Email</label>
+                          <input type="email" name="email" id="email" class="form-control" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required placeholder="examples@examples.com">
+                            <button type="button" class="btn btn-success" id="btnEmail">Ingresa tu email</button>
+                      </div>
+
+                  <br>
+                  <br
+
+
+        <br>
+        <br>
+    </div>
+    <div class="table-responsive col-lg-10 col-lg-offset-1" id="listado"></div>
+</body>
+</html>
